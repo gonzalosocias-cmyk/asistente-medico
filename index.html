@@ -237,6 +237,8 @@
     <input id="cfg-ciudad" placeholder="Ej: Trinidad, Flores" />
     <label>API Key Claude</label>
     <input id="cfg-apikey" type="password" placeholder="sk-ant-..." />
+    <label>API Key OpenAI (transcripción)</label>
+    <input id="cfg-openai" type="password" placeholder="sk-..." />
     <label>Telegram Bot Token</label>
     <input id="cfg-token" type="password" placeholder="123456:ABC..." />
     <label>Telegram Chat ID</label>
@@ -258,6 +260,7 @@
   function cargarConfig() {
     document.getElementById('cfg-ciudad').value = localStorage.getItem('ciudad') || 'Trinidad, Flores';
     document.getElementById('cfg-apikey').value = localStorage.getItem('apikey') || '';
+    document.getElementById('cfg-openai').value = localStorage.getItem('openai_apikey') || '';
     document.getElementById('cfg-token').value = localStorage.getItem('tg_token') || '';
     document.getElementById('cfg-chatid').value = localStorage.getItem('tg_chatid') || '';
     document.getElementById('cfg-email').value = localStorage.getItem('email') || '';
@@ -267,6 +270,7 @@
   function guardarConfig() {
     localStorage.setItem('ciudad', document.getElementById('cfg-ciudad').value);
     localStorage.setItem('apikey', document.getElementById('cfg-apikey').value);
+    localStorage.setItem('openai_apikey', document.getElementById('cfg-openai').value);
     localStorage.setItem('tg_token', document.getElementById('cfg-token').value);
     localStorage.setItem('tg_chatid', document.getElementById('cfg-chatid').value);
     localStorage.setItem('email', document.getElementById('cfg-email').value);
