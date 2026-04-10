@@ -315,14 +315,12 @@
       };
       if (usaWeb) body.tools = [{ type: 'web_search_20250305', name: 'web_search' }];
 
-      const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      const resp = await fetch('/api/chat', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apikey,
-          'anthropic-version': '2023-06-01'
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify({ apikey: apikey, payload: body })
       });
 
       const data = await resp.json();
